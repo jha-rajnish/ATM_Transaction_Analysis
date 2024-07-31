@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ATM Transaction Analysis</title>
+
+  <!-- Open Graph meta tags -->
+  <meta property="og:title" content="ATM Transaction Analysis">
+  <meta property="og:description" content="A comprehensive analysis of ATM transaction data to identify trends, detect anomalies, and understand transaction patterns.">
+  <meta property="og:image" content="./assets/image/display-pic.jpg">
+  <meta property="og:url" content="jha-rajnish.github.io/atm_transaction_analysis/">
+  <meta property="og:type" content="Project">
+
+  <!-- favicon -->
+  <link rel="icon" type="image/svg+xml" sizes="any" href="./assets/icon/favicon.svg">
+  <link rel="apple-touch-icon" href="./assets/icon/favicon.png">
+
+  <!-- stylesheet -->
+  <link rel="stylesheet" href="./css/styles.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+</head>
+
+<body>
+<div id="backgroundBlur" class="background-blur"></div>
+<div class="container content-container">
+  <div align="center" class="heading1">
+    ATM Transaction Analysis
+  </div>
+  <div class="divider-rounded"></div>
+
+  <div class="heading2">
+    Project Objective
+  </div>
+  <div class="divider-dashed"></div>
+  <p class="paragraph">
+    The bank aims to conduct a comprehensive analysis of the performance of five ATMs over a seven-year period, spanning from 2011 to 2017.
+  </p>
+  
+  <div align="center" class="heading2">
+  <h2>Dashboard</h2>
+  </div>
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner">
+      <div class="item active" id="slide1">
+        <img src="./assets/dashboard/Page-01.jpg" class="img-thumbnail" alt="Page-01">
+      </div>
+
+      <div class="item" id="slide2">
+        <img src="./assets/dashboard/Page-02.jpg" class="img-thumbnail" alt="Page-02">
+      </div>
+
+      <div class="item" id="slide2">
+        <img src="./assets/dashboard/Page-03.jpg" class="img-thumbnail" alt="Page-03">
+      </div>
+    </div>
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+
+  <div style="display: flex; justify-content: space-between;">
+    <div class="heading3">
+      <h3>
+        🛠️Software Toolkits:
+      </h3>
+    </div>
+    <div class="software-toolkit">
+      <a href="https://www.databricks.com/" target="_blank">
+        <img src="./assets/icon/Databricks.png" alt="Databricks" height="25" width="23.4042553191">
+      </a>
+      <a href="https://www.microsoft.com/en-in/microsoft-365/excel" target="_blank">
+        <img src="./assets/icon/Microsoft_Excel.png" alt="Microsoft Excel" height="25" width="28.6259541985">
+      </a>
+      <a href="https://powerbi.microsoft.com/" target="_blank">
+        <img src="./assets/icon/Microsoft_Power-BI.png" alt="Microsoft Power-BI" height="25" width="18.75">
+      </a>
+    </div>
+  </div>
+  <div class="divider-dotted"></div>
+
+    <div align="center" class="heading2">
+      <h2 class="center">
+        🔍Problem Statement📝
+      </h2>
+    </div>
+    <div class="divider-dashed"></div>
+    <p class="paragraph">
+      <strong>1. Total Amount Withdrawn Over 7 Years:</strong><br>
+      What is the total amount withdrawn over the past 7 years?
+      <br><br>
+      <strong>2. Total Number of Withdrawals Over 7 Years:</strong><br>
+      How many withdrawals have been made over the past 7 years?
+      <br><br>
+      <strong>3. Comparison of Amount Withdrawn by Cards:</strong><br>
+      How does the amount withdrawn using MasterCard compare to Visa Card across various years?
+      <br><br>
+      <strong>4. Number of Withdrawals by Card at Various ATMs:</strong><br>
+      What is the number of withdrawals made with MasterCard and Visa Card at different ATMs?
+      <br><br>
+      <strong>5. Yearly Withdrawal Trends Across All ATMs:</strong><br>
+      What are the yearly trends in withdrawals for all five ATMs over the past 7 years?
+      <br><br>
+      <strong>6. Quarterly Amount Withdrawal Trends by Card:</strong><br>
+      What are the quarterly trends in the amount withdrawn using MasterCard and Visa Card over the past 7 years?
+      <br><br>
+      <strong>7. Quarterly Withdrawal Trends by Card:</strong><br>
+      What are the quarterly trends in the number of withdrawals using MasterCard and Visa Card over the past 7 years?
+    </p>
+
+    <div class="heading2">
+      <h2 align="center" class="center">
+        📈Analysis Report🧐
+      </h2>
+    </div>
+    <div class="divider-dashed"></div>
+    
+      <div class="question-heading">
+        1. Amount withdrawn over 7-years:
+      </div>
+      <p class="paragraph">
+        &nbsp;&nbsp;• 2011 - (₹767M/13%)📈<br>
+        &nbsp;&nbsp;• 2012 - (₹939M/16%)📈<br>
+        &nbsp;&nbsp;• 2013 - (₹1108M/18%)📈<br>
+        &nbsp;&nbsp;• 2014 - (₹1216M/20%)📈<br>
+        &nbsp;&nbsp;• 2015 - (₹896M/15%)📉<br>
+        &nbsp;&nbsp;• 2016 - (₹612M/10%)📉<br>
+        &nbsp;&nbsp;• 2017 - (₹515M/9%)📉<br>
+        <br>
+        • Total Withdrawals (2011 - 2017) = <strong>₹6 Billion</strong>
+        <br><br>
+      </p>
+     
+     <div class="question-heading">
+       2. Number of withdrawals over 7-years:
+     </div>
+     <p class="paragraph">
+       &nbsp;&nbsp;• 2011 - (205K/14.31%)📈<br>
+       &nbsp;&nbsp;• 2012 - (232K/16.22%)📈<br>
+       &nbsp;&nbsp;• 2013 - (266K/18.58%)📈<br>
+       &nbsp;&nbsp;• 2014 - (280K/19.59%)📈<br>
+       &nbsp;&nbsp;• 2015 - (206K/14.44%)📉<br>
+       &nbsp;&nbsp;• 2016 - (129K/9.05%)📉<br>
+       &nbsp;&nbsp;• 2017 - (112K/7.81%)📉<br>
+       <br>
+       • Total Number of Withdrawals (2011 - 2017) = <strong>1429K</strong>
+       <br><br>
+      </p>
+     
+     <div class="question-heading">
+       3. Comparison of Amount Withdrawn by Card:
+     </div>
+     
+     <p class="paragraph">
+        &nbsp;&nbsp;• 2011<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;- Master Card(₹240M/31.25%)<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;- Visa Card(₹527M/68.75%)<br>
+        &nbsp;&nbsp;• 2012<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;- Master Card(₹297M/31.67%)<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;- Visa Card(₹642M/68.34%)<br>
+        &nbsp;&nbsp;• 2013<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;- Master Card(₹377M/33.99%)<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;- Visa Card(₹732M/66.01%)<br>
+        &nbsp;&nbsp;• 2014<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;- Master Card(₹462M/38.02%)<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;- Visa Card(₹754M/61.98%)<br>
+        &nbsp;&nbsp;• 2015<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;- Master Card(₹325M/36.30%)<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;- Visa Card(₹571M/63.70%)<br>
+        &nbsp;&nbsp;• 2016<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;- Master Card(₹227M/37.05%)<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;- Visa Card(₹385M/62.95%)<br>
+        &nbsp;&nbsp;• 2017<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;- Master Card(₹248M/48.12%)<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;- Visa Card(₹267M/51.88%)<br>
+        <br>
+        • Total Withdrawals by Master Card (2011 - 2017) = <strong>₹2.18 Billion (35.95%)</strong><br>
+        • Total Withdrawals by Visa Card (2011 - 2017) = <strong>₹3.88 Billion (64.05%)</strong><br>
+        <br><br>
+      </p>
+
+     <div class="question-heading">
+       4. Number of Withdrawals by Card at ATMs:
+     </div>
+     <p class="paragraph">
+       &nbsp;&nbsp;• Airport ATM - (205K/14.32%)<br>
+       &nbsp;&nbsp;• Big Street ATM - (207K/14.49%)<br>
+       &nbsp;&nbsp;• Christ College ATM - (291K/20.37%)<br>
+       &nbsp;&nbsp;• KK Nagar ATM - (402K/28.11%)<br>
+       &nbsp;&nbsp;• Mount Road ATM - (325K/22.71%)<br>
+       <br><br>
+       &nbsp;&nbsp;• Airport ATM<br>
+       &nbsp;&nbsp;&nbsp;&nbsp;- Master Card(52K/25.64%)<br>
+       &nbsp;&nbsp;&nbsp;&nbsp;-  Visa Card(152K/74.36%)<br>
+       &nbsp;&nbsp;• Big Street ATM<br>
+       &nbsp;&nbsp;&nbsp;&nbsp;- Master Card(138K/66.78%)<br>
+       &nbsp;&nbsp;&nbsp;&nbsp;- Visa Card(69K/33.22%)<br>
+       &nbsp;&nbsp;• Christ College ATM<br>
+       &nbsp;&nbsp;&nbsp;&nbsp;- Master Card(172K/59.15%)<br>
+       &nbsp;&nbsp;&nbsp;&nbsp;- Visa Card(119K/40.85%)<br>
+       &nbsp;&nbsp;• KK Nagar ATM<br>
+       &nbsp;&nbsp;&nbsp;&nbsp;- Master Card(113K/28.18%)<br>
+       &nbsp;&nbsp;&nbsp;&nbsp;- Visa Card(289K/71.82%)<br>
+       &nbsp;&nbsp;• Mount Road ATM<br>
+       &nbsp;&nbsp;&nbsp;&nbsp;- Master Card(170K/52.41%)<br>
+       &nbsp;&nbsp;&nbsp;&nbsp;- Visa Card(154K/47.59%)<br>
+       <br><br>
+       • Number of Withdrawals by Master Card (2011 - 2017) = <strong>646K(45.22%)</strong><br>
+       • Number of Withdrawals by Visa Card (2011 - 2017) = <strong>783K(54.78%)</strong>
+       <br><br>
+     </p>
+     
+     <div align="center" class="question-heading">
+       5. Yearly Withdrawal Trends Across All ATMs:
+     </div>
+     <div class="carousel-inner">
+        <div class="item active" id="slide1">
+          <img src="./assets/snapshot/question_no-5.png" class="img-thumbnail" alt="question-5">
+        </div>
+        </div>
+     <br></br>
+     
+     <div align="center" class="question-heading">
+       6. Quarterly Amount Withdrawal Trends by Card:
+     </div>
+     <div class="carousel-inner">
+        <div class="item active" id="slide1">
+          <img src="./assets/snapshot/question_no-6.png" class="img-thumbnail" alt="question-6">
+        </div>
+        </div>
+     <br>
+     
+     <div align="center" class="question-heading">
+       7. Quarterly Withdrawal Trends by Card:
+     </div>
+     <div class="carousel-inner">
+        <div class="item active" id="slide1">
+          <img src="./assets/snapshot/question_no-7.png" class="img-thumbnail" alt="question-7">
+        </div>
+     </div>
+     <br>
+
+     <div align="center" class="heading2">
+       <h2>
+         Conclusion📌
+       </h2>
+    </div>
+    <div class="divider-dashed"></div>
+    <p class="paragraph">
+      <strong>1. Withdrawal Trends:</strong><br>
+      &nbsp;&nbsp;• Fluctuations observed in total amount withdrawn and number of transactions, peaking in 2014 and declining thereafter.
+      <br><br>
+      
+      <strong>2. Card Usage Patterns:</strong><br>
+      &nbsp;&nbsp;• Visa Card consistently led in both total amount withdrawn and number of transactions throughout the seven-year period.
+      <br>
+      &nbsp;&nbsp;• Master Card maintained a steady presence but with a smaller share compared to Visa Card.
+      <br><br>
+
+      <strong>3. ATM-Specific Performance:</strong><br>
+      &nbsp;&nbsp;• KK Nagar ATM recorded the highest number of withdrawals, followed by Mount Road and Christ College ATMs.
+      <br>
+      &nbsp;&nbsp;• Usage patterns between Master Card and Visa Card varied across different ATM locations.
+      <br><br>
+
+      <strong>4. Strategic Recommendations:</strong><br>
+      &nbsp;&nbsp;• Tailor promotional strategies to align with dominant card preferences and high-traffic ATM locations identified.
+      <br>
+      &nbsp;&nbsp;• Continuously monitor and adapt strategies to optimize service delivery and maintain transaction volumes.
+    </p>
+
+    <div align="right" class="heading3">
+      Connect with me:
+    </div>
+    <p align="right" class="paragraph">
+      <a href="https://linkedin.com/in/jharajnish" target="_blank">
+        <img src="./assets/icon/LinkedIn.svg" alt="LinkedIn" height="25" width="25">
+      </a>
+
+      <a href="https://github.com/jha-rajnish" target="_blank">
+        <img src="./assets/icon/GitHub.svg" alt="GitHub" height="25" width="25.5555555556">
+      </a>
+
+      <a href="https://instagram.com/rajnish_gallery" target="_blank">
+        <img src="./assets/icon/Instagram.svg" alt="Instagram" height="25" width="25">
+      </a>
+    </p>
+
+ <div style="display: flex; justify-content: space-between;">
+    <p class="paragraph">
+      📂 Visit this Repo:<br>
+      <a href="https://github.com/jha-rajnish/atm_transaction_analysis" target="_blank">
+        ATM Transaction Analysis
+      </a>
+    </p>
+    <p class="paragraph">
+      ✉ Reach me:<br>
+      <a href="mailto:jharajnish@outlook.in">
+        jharajnish@outlook.in
+      </a>
+    </p>
+ </div>
+ <div class="divider-dotted"></div>
+
+       <!-- Copyright -->
+        <p class="footer-copyright">
+            © 2024 Rajnish Jha, India. All Rights Reserved.
+        </p>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script src="./js/scripts.js" defer></script>
+</body>
+</html>
